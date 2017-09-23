@@ -1,1 +1,29 @@
-<app-receitas-item></app-receitas-item>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">Nova Receita</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <a
+      href="#"
+      class="list-group-item clearfix"
+      *ngFor="let receita of receitas">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{receita.nome}}</h4>
+        <p class="list-group-item-text">{{receita.descricao}}</p>
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="receita.caminhoImagem"
+          alt="{{receita.nome}}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
+    </a>
+    <app-receitas-item></app-receitas-item>
+  </div>
+</div>
+
+
